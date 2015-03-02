@@ -1,0 +1,112 @@
+//! **************************************************************************
+// Written by: Map P.68d on Wed Feb 25 13:49:50 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "RsRx" LOCATE = SITE "N17" LEVEL 1;
+COMP "RsTx" LOCATE = SITE "N18" LEVEL 1;
+COMP "btnR" LOCATE = SITE "D9" LEVEL 1;
+COMP "btnS" LOCATE = SITE "B8" LEVEL 1;
+COMP "btnU" LOCATE = SITE "A8" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
+COMP "sw<0>" LOCATE = SITE "T10" LEVEL 1;
+COMP "sw<1>" LOCATE = SITE "T9" LEVEL 1;
+COMP "sw<2>" LOCATE = SITE "V9" LEVEL 1;
+COMP "sw<3>" LOCATE = SITE "M8" LEVEL 1;
+COMP "sw<4>" LOCATE = SITE "N8" LEVEL 1;
+COMP "sw<5>" LOCATE = SITE "U8" LEVEL 1;
+COMP "sw<6>" LOCATE = SITE "V8" LEVEL 1;
+COMP "sw<7>" LOCATE = SITE "T5" LEVEL 1;
+COMP "Led<0>" LOCATE = SITE "U16" LEVEL 1;
+COMP "Led<1>" LOCATE = SITE "V16" LEVEL 1;
+COMP "Led<2>" LOCATE = SITE "U15" LEVEL 1;
+COMP "Led<3>" LOCATE = SITE "V15" LEVEL 1;
+COMP "Led<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "Led<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "Led<6>" LOCATE = SITE "R11" LEVEL 1;
+COMP "Led<7>" LOCATE = SITE "T11" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "T17" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "T18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
+COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
+PIN uart_top_/tfifo_/Mram_mem_pins<20> = BEL "uart_top_/tfifo_/Mram_mem"
+        PINNAME CLKAWRCLK;
+PIN uart_top_/tfifo_/Mram_mem_pins<21> = BEL "uart_top_/tfifo_/Mram_mem"
+        PINNAME CLKBRDCLK;
+TIMEGRP sys_clk_pin = BEL "moles_0" BEL "act_val_0" BEL "act_val_1" BEL
+        "act_val_2" BEL "act_val_3" BEL "act_val_4" BEL "act_val_5" BEL
+        "act_val_6" BEL "act_val_7" BEL "act_val_8" BEL "act_val_9" BEL
+        "act_val_10" BEL "act_val_11" BEL "act_val_12" BEL "act_val_13" BEL
+        "act_val_14" BEL "act_val_15" BEL "act_val_16" BEL "act_val_17" BEL
+        "act_val_18" BEL "act_val_19" BEL "act_val_20" BEL "act_val_21" BEL
+        "act_val_22" BEL "act_val_23" BEL "act_val_24" BEL "act_val_25" BEL
+        "act_val_26" BEL "act_val_27" BEL "act_val_28" BEL "act_val_29" BEL
+        "act_val_30" BEL "act_val_31" BEL "act_dig_0" BEL "act_dig_1" BEL
+        "an_0" BEL "an_1" BEL "an_2" BEL "an_3" BEL "fun_count_0" BEL
+        "fun_count_1" BEL "fun_count_2" BEL "c1/prev_clk_S_0" BEL
+        "c1/prev_clk_S_2" BEL "c1/prev_clk_S_3" BEL "c1/prev_clk_S_1" BEL
+        "c1/clk_S_0" BEL "c1/clk_S_1" BEL "c1/clk_S_2" BEL "c1/clk_S_3" BEL
+        "sec_count_2" BEL "sec_count_1" BEL "sec_count_5" BEL "sec_count_3"
+        BEL "sec_count_4" BEL "sec_count_8" BEL "sec_count_6" BEL
+        "sec_count_7" BEL "sec_count_9" BEL "sec_count_10" BEL "sec_count_11"
+        BEL "sec_count_12" BEL "sec_count_15" BEL "sec_count_13" BEL
+        "sec_count_14" BEL "sec_count_18" BEL "sec_count_16" BEL
+        "sec_count_17" BEL "sec_count_21" BEL "sec_count_19" BEL
+        "sec_count_20" BEL "sec_count_24" BEL "sec_count_22" BEL
+        "sec_count_23" BEL "sec_count_27" BEL "sec_count_25" BEL
+        "sec_count_26" BEL "sec_count_30" BEL "sec_count_28" BEL
+        "sec_count_29" BEL "sec_count_31" BEL "c1/counter_0" BEL
+        "c1/counter_1" BEL "c1/counter_2" BEL "c1/counter_3" BEL
+        "c1/counter_4" BEL "c1/counter_5" BEL "c1/counter_6" BEL
+        "c1/counter_7" BEL "c1/counter_8" BEL "c1/counter_9" BEL
+        "c1/counter_10" BEL "c1/counter_11" BEL "c1/counter_12" BEL
+        "c1/counter_13" BEL "c1/counter_14" BEL "c1/counter_15" BEL
+        "c1/counter_16" BEL "c1/counter_17" BEL "c1/counter_18" BEL
+        "c1/counter_19" BEL "c1/counter_20" BEL "c1/counter_21" BEL
+        "c1/counter_22" BEL "c1/counter_23" BEL "c1/counter_24" BEL
+        "c1/counter_25" BEL "c1/counter_26" BEL "c1/counter_27" BEL
+        "c1/counter_28" BEL "c1/counter_29" BEL "c1/counter_30" BEL
+        "c1/counter_31" BEL "sec_count_0" BEL "uart_top_/tfifo_rd_z" BEL
+        "uart_top_/uart_/tx_bits_remaining_3" BEL
+        "uart_top_/uart_/tx_bits_remaining_2" BEL
+        "uart_top_/uart_/tx_bits_remaining_1" BEL
+        "uart_top_/uart_/tx_bits_remaining_0" BEL "uart_top_/uart_/tx_out" BEL
+        "uart_top_/uart_/tx_countdown_5" BEL "uart_top_/uart_/tx_countdown_4"
+        BEL "uart_top_/uart_/tx_countdown_3" BEL
+        "uart_top_/uart_/tx_countdown_2" BEL "uart_top_/uart_/tx_countdown_1"
+        BEL "uart_top_/uart_/tx_countdown_0" BEL
+        "uart_top_/uart_/tx_clk_divider_4" BEL
+        "uart_top_/uart_/tx_clk_divider_3" BEL
+        "uart_top_/uart_/tx_clk_divider_2" BEL
+        "uart_top_/uart_/tx_clk_divider_1" BEL
+        "uart_top_/uart_/tx_clk_divider_0" BEL "uart_top_/uart_/tx_state_1"
+        BEL "uart_top_/uart_/tx_state_0" BEL "uart_top_/uart_/tx_data_7" BEL
+        "uart_top_/uart_/tx_data_6" BEL "uart_top_/uart_/tx_data_5" BEL
+        "uart_top_/uart_/tx_data_4" BEL "uart_top_/uart_/tx_data_3" BEL
+        "uart_top_/uart_/tx_data_2" BEL "uart_top_/uart_/tx_data_1" BEL
+        "uart_top_/uart_/tx_data_0" BEL "uart_top_/tfifo_/rp_9" BEL
+        "uart_top_/tfifo_/rp_8" BEL "uart_top_/tfifo_/rp_7" BEL
+        "uart_top_/tfifo_/rp_6" BEL "uart_top_/tfifo_/rp_5" BEL
+        "uart_top_/tfifo_/rp_4" BEL "uart_top_/tfifo_/rp_3" BEL
+        "uart_top_/tfifo_/rp_2" BEL "uart_top_/tfifo_/rp_1" BEL
+        "uart_top_/tfifo_/rp_0" BEL "uart_top_/tfifo_/fifo_empty" BEL
+        "uart_top_/tfifo_/fifo_cnt_9" BEL "uart_top_/tfifo_/fifo_cnt_8" BEL
+        "uart_top_/tfifo_/fifo_cnt_7" BEL "uart_top_/tfifo_/fifo_cnt_6" BEL
+        "uart_top_/tfifo_/fifo_cnt_5" BEL "uart_top_/tfifo_/fifo_cnt_4" BEL
+        "uart_top_/tfifo_/fifo_cnt_3" BEL "uart_top_/tfifo_/fifo_cnt_2" BEL
+        "uart_top_/tfifo_/fifo_cnt_1" BEL "bGameMode" BEL "seg_0" BEL "seg_1"
+        BEL "seg_2" BEL "seg_3" BEL "seg_4" BEL "seg_5" BEL "seg_6" BEL
+        "sec_count_31_1" BEL "clk_BUFGP/BUFG" PIN
+        "uart_top_/tfifo_/Mram_mem_pins<20>" PIN
+        "uart_top_/tfifo_/Mram_mem_pins<21>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+
