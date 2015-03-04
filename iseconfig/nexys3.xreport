@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-02-25T13:07:08</DateModified>
+  <DateModified>2015-03-02T13:55:53</DateModified>
   <ModuleName>nexys3</ModuleName>
-  <SummaryTimeStamp>2015-02-25T13:03:48</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-03-02T13:54:24</SummaryTimeStamp>
   <SavedFilePath>C:/Users/152/Desktop/lab4_jchu_sjeong/lab4_WAM/iseconfig/nexys3.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/152/Desktop/lab4_jchu_sjeong/lab4_WAM\</ImplementationReportsDirectory>
   <DateInitialized>2015-02-04T12:48:17</DateInitialized>

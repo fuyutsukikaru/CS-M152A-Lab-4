@@ -59,6 +59,8 @@ module nexys3 (/*AUTOARG*/
    reg [2:0]   mole4 = 0;
    reg [2:0]   toDeleteMole = 0;
    
+   reg [1:0]   tPAUSE = {2'b00};
+   reg [1:0]   tRESET = {2'b00};
 
 
    output [3:0]   clk_S;
@@ -66,14 +68,53 @@ module nexys3 (/*AUTOARG*/
    
    integer sec_count = 30;
    integer fun_count = 0;
-   reg     bGameMode = 1;
-  
+   reg     bGameMode = 0;
+   reg	   bPAUSE    = 0;
+   integer random = 1;
+	//Button debounce
+
+
 	// Countdown timer
    always @ (posedge clk)
+   
 	begin
-		if (clk_S[0] == 1 && prev_clk_S[0] == 0)
+					//tPAUSE [1] IS THE CURRENT
+			//tPAUSE [0] IS THE PREVIOUS
+			//DO NOT CHANGE THE FUCKING SYMANTECS
+			//kthx
+	if (clk_S[3] == 1 && prev_clk_S[3] == 0)
+	begin
+	
+		tPAUSE[0] = tPAUSE[1];
+		tPAUSE[1] = btnS;
+		tRESET[0] = tRESET[1];
+		tRESET[1] = btnR;
+			//check for {2b'01}
+		if(tPAUSE == 1)
+		begin
+			if(bGameMode)
+				begin
+					bPAUSE = !bPAUSE;
+				end
+			else
+				begin
+					bGameMode = 1;
+					bPAUSE = 0;
+				end
+		end
+		if(tRESET == 1)
+		begin
+			bGameMode = 0;
+			moles = 0;
+			moleCount = 0;
+			sec_count = 30;
+			//Led = moles;
+
+		end
+	end
+	if (clk_S[0] == 1 && prev_clk_S[0] == 0)
 			begin
-				if (bGameMode == 1)
+				if (bGameMode == 1 && !bPAUSE)
 					begin
 						sec_count = sec_count - 1;
 						if (sec_count == 0)
@@ -83,14 +124,18 @@ module nexys3 (/*AUTOARG*/
 							end
 					end
 			end
-	end
-	//Generate new mole
-	integer random = 0;
-	always @ (posedge clk)
-		begin
-		if(prev_clk_S[1] == 0 && clk_S[1] == 1 && bGameMode)
+
+		random = random + clk_S[0] + clk_S[3];
+//May God have mercy on our Souls for this shit code
+		if(bPAUSE)
 			begin
-				random = ($unsigned($random) % 8);
+			//do nothing lol
+			end
+		//generate new mole
+		else if(prev_clk_S[1] == 0 && clk_S[1] == 1 && bGameMode)
+			begin
+				//random = $unsigned($random % 8);
+				random = random % 8;
 				if(random == mole1 || random == mole2 || random == mole3 || random == mole4)
 					begin
 						random = random+1;
@@ -137,10 +182,14 @@ module nexys3 (/*AUTOARG*/
 			end
 	//end Generate new Mole
 	//Delete mole if moleCount == 5;
-		//if(prev_clk_S[1] == 0 && clk_S[1] == 1 && bGameMode)
-			//begin
-				//moles[toDeleteMole]  = {1'b0};
-			//end
+		if(prev_clk_S[1] == 0 && clk_S[1] == 1 && bGameMode)
+			begin
+				if(moleCount >= 5)
+					begin
+						moles[toDeleteMole]  = 0;
+						moleCount = moleCount - 1;
+					end
+			end
 	//end delete Mole
 		end	
 	
@@ -156,7 +205,6 @@ module nexys3 (/*AUTOARG*/
 	begin
 		if(bGameMode) //Game has started
 		begin
-			if(prev_clk_S[3] == 0 && clk_S[3] == 1) //fast clock
 			if(prev_clk_S[3] == 0 && clk_S[3] == 1) //fast clock
 				begin
 					
@@ -311,7 +359,7 @@ module nexys3 (/*AUTOARG*/
 						end
 			end
 		end
-		else
+		else	//Game mode not on, Fun animation!
 			begin
 				if(prev_clk_S[2] == 0 && clk_S[2] == 1) //4Hz
 					begin

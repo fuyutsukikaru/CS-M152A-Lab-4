@@ -90,7 +90,7 @@ module clock(
 			begin
 				prev_clk_S[2] = clk_S[2];
 			end
-		if (counter % (11177) == 0)
+		if (counter % (71117) == 0)
 			begin
 				if (clk_S[3] == 0)
 					begin
